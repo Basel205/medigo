@@ -61,3 +61,16 @@ This project follows **GitHub Flow**:
 - Database: Relational database
 - Containerization: Docker
 - Deployment: Cloud-based infrastructure
+
+
+## Software Design
+
+The MediGo system follows a layered client-server architecture with clear separation of presentation, application, and data layers.
+
+Key design principles applied:
+- Abstraction via base User entity
+- Modular backend components
+- High cohesion within modules
+- Low coupling between layers
+
+Design diagrams and UI artifacts are available in `/docs/design/`.
