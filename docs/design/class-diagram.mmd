@@ -1,0 +1,45 @@
+classDiagram
+
+class User {
+  +id: String
+  +name: String
+  +email: String
+  +role: String
+}
+
+class Patient {
+  +searchProviders()
+  +bookAppointment()
+}
+
+class Provider {
+  +updateAvailability()
+  +viewBookings()
+}
+
+class Appointment {
+  +date: Date
+  +time: Time
+  +status: String
+}
+
+class AuthService {
+  +login()
+  +verifyUser()
+}
+
+class BookingService {
+  +createAppointment()
+  +cancelAppointment()
+}
+
+User <|-- Patient
+User <|-- Provider
+
+Patient --> Appointment
+Provider --> Appointment
+
+AuthService --> User
+BookingService --> Appointment
+BookingService --> Patient
+BookingService --> Provider

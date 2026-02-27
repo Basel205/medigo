@@ -1,0 +1,22 @@
+flowchart LR
+
+Frontend[Frontend Module]
+
+subgraph Backend Modules
+    Auth[Authentication Module]
+    Booking[Booking Module]
+    Provider[Provider Management Module]
+    Notification[Notification Module]
+end
+
+Database[(Database)]
+
+Frontend --> Auth
+Frontend --> Booking
+Frontend --> Provider
+
+Booking --> Database
+Provider --> Database
+Auth --> Database
+
+Booking --> Notification

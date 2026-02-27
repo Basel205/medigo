@@ -1,0 +1,31 @@
+flowchart TB
+
+subgraph Presentation Layer
+    UI[Frontend UI<br/>Web Interface]
+end
+
+subgraph Application Layer
+    API[API Controllers]
+    SERVICE[Business Logic Services]
+end
+
+subgraph Data Layer
+    REPO[Repository Layer]
+    DB[(Database)]
+    CACHE[(Cache)]
+end
+
+subgraph Infrastructure Layer
+    DOCKER[Docker Containers]
+    CLOUD[Cloud / VM Deployment]
+end
+
+UI -->|HTTP Requests| API
+API --> SERVICE
+SERVICE --> REPO
+REPO --> DB
+SERVICE --> CACHE
+
+DOCKER --> UI
+DOCKER --> API
+CLOUD --> DOCKER
